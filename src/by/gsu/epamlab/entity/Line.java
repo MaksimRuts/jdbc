@@ -3,18 +3,17 @@ package by.gsu.epamlab.entity;
 public class Line {
     private final int LENGTH;
     private int number;
-    private static final int DEFAULT_NUMBER = 1;
 
     public Line() {
-        this(0);
+        this(0, 0);
     }
 
-    public Line(int length) {
+    public Line(int length, int number) {
         this.LENGTH = length;
-        number = DEFAULT_NUMBER;
+        this.number = number;
     }
 
-    public int getLENGTH() {
+    public int getLength() {
         return LENGTH;
     }
 
@@ -22,9 +21,12 @@ public class Line {
         return number;
     }
 
-    public void increaseNumber() {
-        this.number++;
+    public String getStringToQuery() {
+        return "('" +  LENGTH + "', '" + number + "');";
     }
 
-
+    @Override
+    public String toString() {
+        return LENGTH + ";" + number;
+    }
 }
