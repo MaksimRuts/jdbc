@@ -29,7 +29,7 @@ public final class BaseConnector {
             try {
                 connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
             } catch (SQLException e) {
-                System.err.println("Error connect to database " + DATABASE_URL);
+                System.err.println("Database connecting error (" + DATABASE_URL + ")");
             }
         return connection;
     }
@@ -40,7 +40,7 @@ public final class BaseConnector {
                 connection.close();
                 connection = null;
             } catch (SQLException e) {
-                System.err.println("Connection close exception");
+                System.err.println("Connection closing error");
             }
         }
     }

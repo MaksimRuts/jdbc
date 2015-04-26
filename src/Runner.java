@@ -58,6 +58,9 @@ public class Runner {
             }
         } catch (SQLException e) {
             System.err.println("Database processing error.");
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.err.println("Connection access error. Check driver setting.");
         }
     }
 }
